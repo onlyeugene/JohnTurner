@@ -23,11 +23,13 @@
 }
 
 .hero-bg {
-  background-image: url('./assets/hero.png');
+  background-image: url('./assets/herobg.svg');
   width: inherit;
   background-repeat: no-repeat;
   background-size: cover;
-  height: fit-content;
+  background-position: center;
+  /* height: 25vh; */
+  background-color: #2c2b2b;
 }
 
 .button:nth-of-type(1){
@@ -38,3 +40,10 @@
   margin-bottom: 20px;
 }
 
+@media only screen and (max-width: 768px) {
+  .hero-bg {
+    background-image: url('./assets/mobile.svg');
+    background-color: #2c2b2b;
+    background-position: center;
+  }
+}

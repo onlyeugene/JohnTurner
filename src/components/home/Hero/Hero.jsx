@@ -4,7 +4,7 @@ import cart from '../../../assets/cart.svg'
 const Hero = () => {
   return (
     <div className='w-full bg-[#fdfdfd] overflow-hidden'>
-      <Link to={'/cartpage'} className='flex justify-end md:px-[5rem] py-[2rem] gap-2 text-[16px] items-center relative'>
+      <Link to={'/cartpage'} className='flex justify-end md:px-[5rem] px-[2rem] py-[2rem] gap-2 text-[16px] items-center relative'>
         <img src={cart} alt="this is an image of a cart" className=''/>
         <h1>Cart</h1>
         <span className='absolute mb-6 mx-[3.5rem] rounded-full border-[#FF0000] border bg-[#FF0000] text-white py-.7 px-1.5  text-[13px] '>2</span>

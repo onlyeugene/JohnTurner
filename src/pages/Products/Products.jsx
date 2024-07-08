@@ -10,7 +10,7 @@ const Products = () => {
           <img src={arrow} alt="arrow" />
         </div>
 
-        <h2>Inspiration</h2>
+        <h2 className='border border-[#AC702F] bg-[#AC702F] text-white py-1 px-3 rounded-full'>Inspiration</h2>
 
         <div className='flex items-center gap-1'>
           <h3>Categories</h3>
