@@ -27,7 +27,8 @@ export const products =[
         price: 'N160,002',
         rating: rating,
         Number: 8,
-        stock: '17'
+        stock: '17',
+        slug: 'casio-first'
     },
     {
         id: 2,
@@ -38,7 +39,8 @@ export const products =[
         price: 'N301,899',
         rating: rating,
         Number: 5,
-        stock: '6'
+        stock: '6',
+        slug: 'rolex-first'
     },
     {
         id: 3,
@@ -49,7 +51,8 @@ export const products =[
         price: 'N175,054',
         rating: rating,
         Number: 18,
-        stock: '6'
+        stock: '6',
+        slug: 'rolex-second'
     },
     {
         id: 4,
@@ -60,7 +63,8 @@ export const products =[
         price: 'N194,542',
         rating: rating,
         Number: 42,
-        stock: '6'
+        stock: '6',
+        slug: 'mondaine-first'
     },
     {
         id: 5,
@@ -71,7 +75,8 @@ export const products =[
         price: 'N160,002',
         rating: rating,
         Number: 8,
-        stock: '17'
+        stock: '17',
+        slug: 'ligure-first'
     },
     {
         id: 6,
@@ -82,7 +87,8 @@ export const products =[
         price: 'N301,889',
         rating: rating,
         Number: 24,
-        stock: '6'
+        stock: '6',
+        slug: 'certina-first'
     },
     {
         id: 7,
@@ -93,7 +99,8 @@ export const products =[
         price: 'N175,054',
         rating: rating,
         Number: 14,
-        stock: '6'
+        stock: '6',
+        slug: 'timex-first'
     },
     {
         id: 8,
@@ -104,7 +111,8 @@ export const products =[
         price: 'N194,542',
         rating: rating,
         Number: 10,
-        stock: '6'
+        stock: '6',
+        slug: 'seiko-first'
     },
     {
         id: 9,
@@ -115,7 +123,8 @@ export const products =[
         price: 'N160,002',
         rating: rating,
         Number: 9,
-        stock: '17'
+        stock: '17',
+        slug: 'ligure-second'
     },
     {
         id: 10,
@@ -126,7 +135,8 @@ export const products =[
         price: 'N301,899',
         rating: rating,
         Number: 19,
-        stock: '6'
+        stock: '6',
+        slug: 'casio-second'
     },
     {
         id: 11,
@@ -137,7 +147,8 @@ export const products =[
         price: 'N175,054',
         rating: rating,
         Number: 36,
-        stock: '6'
+        stock: '6',
+        slug: 'casio-third'
     },
     {
         id: 12,
@@ -148,7 +159,8 @@ export const products =[
         price: 'N194,542',
         rating: rating,
         Number: 102,
-        stock: '6'
+        stock: '6',
+        slug: 'garonne-first'
     },
     {
         id: 13,
@@ -159,7 +171,8 @@ export const products =[
         price: 'N160,002',
         rating: rating,
         Number: 41,
-        stock: '17'
+        stock: '17',
+        slug: 'balmain-first'
     },
     {
         id: 14,
@@ -170,7 +183,8 @@ export const products =[
         price: 'N301,899',
         rating: rating,
         Number: 45,
-        stock: '6'
+        stock: '6',
+        slug: 'lorus-first'
     },
     {
         id: 15,
@@ -181,7 +195,8 @@ export const products =[
         price: 'N11,700',
         rating: rating,
         Number: 32,
-        stock: '6'
+        stock: '6',
+        slug: 'icewatch-first'
     },
     {
         id: 16,
@@ -192,6 +207,7 @@ export const products =[
         price: 'N194,542',
         rating: rating,
         Number: 87,
-        stock: '6'
+        stock: '6',
+        slug: 'calypso-first'
     }
 ]
