@@ -4,7 +4,7 @@ import { products } from './ProductsDb';
 const Products = () => {
   return (
     <div className='w-full flex flex-col gap-5 justify-center items-center md:px-[2rem] px-[1rem] py-[2rem] bg-[#f4f4f479] overflow-hidden'>
-      <div className='flex justify-center text-[16px] gap-5'>
+      <div className='flex justify-center items-center text-[16px] gap-5'>
         <div className='flex items-center gap-1'>
           <h1>Brands</h1>
           <img src={arrow} alt="arrow" />
@@ -20,16 +20,16 @@ const Products = () => {
 
       <h1 className='text-[#0F172A] text-[32px] font-semibold text-center'>Explore beautiful Inspiration from our Watch Collection</h1>
 
-      <ul className='flex justify-center text-nowrap items-center gap-[5.5rem] text-[#475569]'>
-        <li className='border py-[.4rem] rounded-lg border-[#0F172A] px-4'>All</li>
-        <li>Casio</li>
-        <li>Seiko</li>
-        <li>Rolex</li>
-        <li>Richard Millie</li>
-        <li>Timex</li>
-        <li>Mondaine</li>
-        <li>Hauer</li>
-      </ul>
+        <div className='About w-[20rem]'>
+          <p className='border py-[.4rem] rounded-lg border-[#0F172A] px-4'>All</p>
+          <p>Casio</p>
+          <p>Seiko</p>
+          <p>Rolex</p>
+          <p>Richard Millie</p>
+          <p>Timex</p>
+          <p>Mondaine</p>
+          <p>Hauer</p>
+        </div>
 
       <div className='w-full grid md:grid-cols-4 grid-cols-2 gap-5'>
         {products.map((product) => (

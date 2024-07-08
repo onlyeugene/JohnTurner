@@ -47,3 +47,22 @@
     background-position: center;
   }
 }
+
+
+.About {
+  display: flex;
+  gap: 1.5em;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  align-items: center;
+  text-wrap: nowrap;
+}
+
+.About img {
+  scroll-snap-align: center;
+}
+
+.About {
+  scroll-behavior: smooth;
+}
