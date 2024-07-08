@@ -2,7 +2,7 @@ import logo from '../../assets/logo.svg';
 import arrow from '../../assets/down_arrow.svg';
 import search from '../../assets/search.svg';
 import { Link, useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
   const location = useLocation();
@@ -63,6 +63,14 @@ const toggleModalOpen = () => {
         }
     });
 };
+
+useEffect(() => {
+    if (isModalOpen || openModal) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+  }, [isModalOpen, openModal]);
 
   if (!isNavbarVisible) {
     return null;
