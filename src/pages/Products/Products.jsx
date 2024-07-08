@@ -21,7 +21,7 @@ const Products = () => {
 
       <h1 className='text-[#0F172A] text-[32px] font-semibold text-center'>Explore beautiful Inspiration from our Watch Collection</h1>
 
-        <div className='About w-[20rem]'>
+        <div className='About md:w-[80rem] w-[20rem] md:justify-center md:gap-[5.5rem] gap-[1.5rem]'>
           <p className='border py-[.4rem] rounded-lg border-[#0F172A] px-4'>All</p>
           <p>Casio</p>
           <p>Seiko</p>

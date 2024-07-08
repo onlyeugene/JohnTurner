@@ -51,7 +51,6 @@
 
 .About {
   display: flex;
-  gap: 1.5em;
   overflow-x: hidden;
   scroll-snap-type: x mandatory;
   overflow-x: auto;
