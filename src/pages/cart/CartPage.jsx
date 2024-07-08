@@ -3,8 +3,36 @@ import cart from '../../assets/cart.svg'
 import casio from '../../assets/cartcasio.svg'
 import montaine from '../../assets/cartmontaine.svg'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const CartPage = () => {
+    const [count, setCount] = useState(0);
+    const [counter, setCounter] =useState(0)
+    const handleIncrement = () => {
+        setCount (count +1);
+    }
+
+    const handleDecrement = () => {
+        if (count > 0){
+            setCount(count -1)
+        }
+    }
+    const AddtoCart = () =>{
+        setCount(0)
+    }
+
+    const handleDecrease = () =>{
+        if (counter > 0){
+            setCounter(counter -1)
+        }
+        console.log(counter)
+    }
+    
+    const handleIncrease = () =>{
+        setCounter(counter +1)
+    } 
+
+
   return (
     <div className='w-full md:px-[5rem] bg-[#f4f4f479] overflow-hidden'>
         <div className='flex justify-between md:px-0 px-[2rem] py-[2rem]'>
@@ -30,9 +58,9 @@ const CartPage = () => {
                         <h2 className='md:text-2xl text-sm font-semibold'>N160,002</h2>
                         <div className='md:text-base text-xs'>
                             <button className='border border-[#AC702F] px-1 rounded-2xl'>
-                                <span className='mr-2'>-</span>
-                                1
-                                <span className='ml-1'> +</span>
+                                <span className='mr-2' onClick={handleDecrement}>-</span>
+                                {count}
+                                <span className='ml-1' onClick={handleIncrement}> +</span>
                             </button>
                         </div>
                         <p className='text-[#12DF00] d:text-base text-xs'>In Stock</p>
@@ -45,11 +73,11 @@ const CartPage = () => {
                     <div className='flex flex-col gap-5 '>
                         <h1 className='md:text-2xl text-sm  font-semibold'>Mondaine Classic 40mm</h1>
                         <h2 className='md:text-2xl text-sm  font-semibold'>N160,002</h2>
-                        <div className='d:text-base text-xs'>
+                        <div className='md:text-base text-xs'>
                             <button className='border border-[#AC702F] px-1 rounded-2xl'>
-                                <span className='mr-2'>-</span>
-                                1
-                                <span className='ml-1'> +</span>
+                                <span className='mr-2' onClick={handleDecrease}> -</span>
+                                {counter}
+                                <span className='ml-1' onClick={handleIncrease}> +</span>
                             </button>
                         </div>
                         <p className='text-[#12DF00] d:text-base text-xs'>In Stock</p>

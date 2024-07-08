@@ -1,4 +1,4 @@
-import Products from '../../pages/Products/Products'
+import Products from '../../pages/products/Products'
 import Hero from './Hero/Hero'
 
 const HomeIndex = () => {
