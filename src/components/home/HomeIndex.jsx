@@ -1,11 +1,11 @@
-import Products from '../../pages/products/Products'
+import Products from '../../pages/Products/Products'
 import Hero from './Hero/Hero'
 
 const HomeIndex = () => {
   return (
     <div>
       <Hero />
-      <Products/>
+      <Products />
     </div>
   )
 }
