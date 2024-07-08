@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import arrow from '../../assets/down_arrow.svg';
 import { products } from './ProductsDb';
 
@@ -59,8 +60,10 @@ const Products = () => {
                 0
                 <span> +</span>
               </button>
-              <button className='border md:text-base text-xs rounded-2xl md:py-1 py-1.5  md:px-2 bg-[#AC702F] border-[#AC702F] text-white'>Add to Cart</button>
-              <button className='border md:text-base text-xs border-[#AC702F] md:py-1 py-1.5 md:px-1 rounded-2xl'>Buy now</button>
+              <Link to={'/cartpage'} className='border text-center md:text-base text-xs rounded-2xl md:py-1 py-1.5  md:px-2 bg-[#AC702F] border-[#AC702F] text-white'>Add to Cart
+              </Link>
+              <Link to={'/checkoutpage'} className='border md:text-base text-xs text-center border-[#AC702F] md:py-1 py-1.5 md:px-1 rounded-2xl'>Buy now
+              </Link>
             </div>
           </div>
         ))}
