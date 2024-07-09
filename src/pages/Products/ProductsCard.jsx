@@ -136,7 +136,7 @@ const ProductsCard = (props) => {
           <button onClick={handleAddToCart} className="border w-full text-center md:text-base text-xs rounded-2xl md:py-1 py-1.5 md:px-2 bg-[#AC702F] border-[#AC702F] text-white">
             Add to Cart
           </button>
-          <button className="border w-2/3 md:text-base text-xs text-center border-[#AC702F] md:py-1 py-1.5 md:px-1 rounded-2xl">
+          <button className="border md:w-2/3 md:text-base text-xs text-center border-[#AC702F] md:py-1 py-1.5 md:px-1 rounded-2xl">
             Buy now
           </button>
         </div>
