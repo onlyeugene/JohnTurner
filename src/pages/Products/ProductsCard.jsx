@@ -132,11 +132,11 @@ const ProductsCard = (props) => {
         <h5 className="md:text-sm text-xs text-gray-500 mt-5">
           <span className="font-bold text-[#AC702F]">{stock}</span> left in stock
         </h5>
-        <div className="md:flex md:flex-col grid md:justify-between mt-2 md:gap-[1rem] gap-2">
-          <button onClick={handleAddToCart} className="border text-center md:text-base text-xs rounded-2xl md:py-1 py-1.5 md:px-2 bg-[#AC702F] border-[#AC702F] text-white">
+        <div className="md:flex grid  mt-2 md:gap-[.5rem] gap-2">
+          <button onClick={handleAddToCart} className="border w-full text-center md:text-base text-xs rounded-2xl md:py-1 py-1.5 md:px-2 bg-[#AC702F] border-[#AC702F] text-white">
             Add to Cart
           </button>
-          <button className="border md:text-base text-xs text-center border-[#AC702F] md:py-1 py-1.5 md:px-1 rounded-2xl">
+          <button className="border w-2/3 md:text-base text-xs text-center border-[#AC702F] md:py-1 py-1.5 md:px-1 rounded-2xl">
             Buy now
           </button>
         </div>

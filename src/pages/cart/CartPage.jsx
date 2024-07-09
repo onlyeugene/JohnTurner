@@ -134,6 +134,7 @@ import { Link } from "react-router-dom";
 import logo from '../../assets/logo.svg';
 import cart from '../../assets/cart.svg';
 import { removeFromCart, updateQuantity } from "../../stores/cart";
+import { useEffect, useState } from "react";
 
 const CartPage = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -153,6 +154,14 @@ const CartPage = () => {
     dispatch(removeFromCart(id));
   };
 
+  const [totalQuantity, setTotalQuantity] =useState (0);
+  const carts =useSelector (store => store.cart.items);
+  useEffect(() => {
+    let total = 0;
+    carts.forEach(item => total += item.quantity);
+    setTotalQuantity(total)
+  }, [carts])
+
   if (cartItems.length === 0) {
     return (
       <div className='w-full md:px-[5rem] bg-[#f4f4f479] overflow-hidden'>
@@ -160,12 +169,13 @@ const CartPage = () => {
           <Link to={'/'}>
             <img src={logo} alt="logo" />
           </Link>
-          <div className='flex items-center gap-1'>
-            <img src={cart} alt='cart' />
-            <h1 className='text-[#334155]'>Cart</h1>
+        <div className='flex items-center gap-1'>
+          <img src={cart} alt="this is an image of a cart" className=''/>
+            <h1>Cart</h1>
+            <span className='absolute mb-6 mx-[-.5rem] rounded-full border-[#FF0000] border bg-[#FF0000] text-white py-.7 px-1.5  text-[13px]'>{totalQuantity}</span>
           </div>
         </div>
-        <h2 className='text-center mt-20'>Your cart is empty</h2>
+        <h2 className='text-center py-[10rem]'>Your cart is empty</h2>
       </div>
     );
   }
@@ -188,7 +198,7 @@ const CartPage = () => {
 
           {cartItems.map((item) => (
             <div key={item.productId} className='py-[2rem] flex gap-[2rem] border-b border-[#94A3B8]'>
-              <img src={item.image} alt={item.model} className='border border-[#AC702F] rounded-md bg-transparent '/>
+              <img src={item.image} alt={item.model} className='border border-[#AC702F] rounded-md bg-transparent w-[10rem]'/>
 
               <div className='flex flex-col gap-5 '>
                 <h1 className='md:text-2xl text-sm font-semibold'>{item.model}</h1>
