@@ -3,10 +3,30 @@ import casio from '../../assets/cartcasio.svg'
 import montaine from '../../assets/cartmontaine.svg'
 import polygon from '../../assets/polygon.svg'
 import ups from '../../assets/ups.svg'
-import visa from '../../assets/visa.svg'
+// import visa from '../../assets/visa.svg'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+
+
 
 const CheckoutPage = () => {
+  const [count , setCount] = useState(1)
+  const [counter, setCounter] =useState(1)
+  
+  const handleIncrement = () =>{
+    setCount(count + 1)
+  }
+  
+  const handleDecrement = () =>{
+    setCount(count -1 < 1 ? 1: count-1)
+  }
+  const handleIncrease = () =>{
+    setCounter(counter + 1)
+  }
+  
+  const handleDecrease = () =>{
+    setCounter(counter -1 < 1 ? 1: counter-1)
+  }
   return (
     <div className='w-full md:px-[5rem] py-0 px-0 md:py-[2rem] bg-[#f4f4f479]'>
       <Link to={'/'}>
@@ -25,9 +45,9 @@ const CheckoutPage = () => {
                     <h2 className='md:text-2xl text-sm font-semibold'>N160,002</h2>
                     <div className='md:text-base text-xs'>
                         <button className='border border-[#AC702F] px-1 rounded-2xl'>
-                            <span className='mr-2'>-</span>
-                            1
-                            <span className='ml-1'> +</span>
+                            <span className='mr-2' onClick={handleDecrement}>-</span>
+                            {count}
+                            <span className='ml-1' onClick={handleIncrement}> +</span>
                         </button>
                     </div>
                     <p className='text-[#12DF00] d:text-base text-xs'>In Stock</p>
@@ -42,9 +62,9 @@ const CheckoutPage = () => {
                     <h2 className='md:text-2xl text-sm  font-semibold'>N160,002</h2>
                     <div className='md:text-base text-xs'>
                         <button className='border border-[#AC702F] px-1 rounded-2xl'>
-                            <span className='mr-2'>-</span>
-                            1
-                            <span className='ml-1'> +</span>
+                            <span className='mr-2' onClick={handleDecrease}>-</span>
+                            {counter}
+                            <span className='ml-1' onClick={handleIncrease}> +</span>
                         </button>
                     </div>
                     <p className='text-[#12DF00] d:text-base text-xs'>In Stock</p>
@@ -86,7 +106,7 @@ const CheckoutPage = () => {
                 <span className='text-[#0F172A]'>UPS</span>
               </div>
               <div>
-                <img src={polygon} alt="" />
+                {/* <img src={polygon} alt="" /> */}
               </div>
             </div>
             <div className='px-10 pb-7 flex flex-col gap-5'>
@@ -105,8 +125,8 @@ const CheckoutPage = () => {
             <div className='pb-[3rem] relative'>
               <input type="text" placeholder='Card Number' className='outline-none input-place border-b w-full py-[1rem] md:text-base text-xs px-[1rem]'/>
               <div className='flex right-0 pt-5 top-0 absolute'>
-                <img src={visa} alt="" className='md:w-11 w-10'/>
-                <img src={polygon} alt="" />
+                {/* <img src={visa} alt="" className='md:w-11 w-10'/> */}
+                {/* <img src={polygon} alt="" /> */}
               </div>
             </div>
 
