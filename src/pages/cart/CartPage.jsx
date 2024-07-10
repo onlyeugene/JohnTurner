@@ -201,7 +201,7 @@ const CartPage = () => {
               <img src={item.image} alt={item.model} className='border border-[#AC702F] rounded-md bg-transparent w-[10rem]'/>
 
               <div className='flex flex-col gap-5 '>
-                <h1 className='md:text-2xl text-sm font-semibold'>{item.model}</h1>
+                <h1 className='md:text-2xl text-sm font-semibold'>{item.type} {item.model}</h1>
                 <h2 className='md:text-2xl text-sm font-semibold'>N{item.price}</h2>
                 <div className='md:text-base text-xs'>
                   <button className='border border-[#AC702F] px-1 rounded-2xl'>
@@ -212,7 +212,7 @@ const CartPage = () => {
                 </div>
                 <p className='text-[#12DF00] d:text-base text-xs'>In Stock</p>
                 <button 
-                  className='text-red-500 md:text-sm text-xs md:pr-[9rem] pr-[4.5rem]' 
+                  className='text-red-500 md:text-sm text-xs md:pr-[25rem] pr-[15rem]' 
                   onClick={() => handleRemoveItem(item.productId)}
                 >
                   Remove

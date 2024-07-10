@@ -103,6 +103,7 @@ const ProductsCard = (props) => {
     dispatch(addToCart({
       productId: id,
       image: Image,
+      type: type,
       model: model,
       price: price,
       quantity: 1
