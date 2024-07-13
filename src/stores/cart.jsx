@@ -1,29 +1,3 @@
-// import { createSlice } from "@reduxjs/toolkit";
-
-// const initialState = {
-//   items: []
-// };
-
-// const cartSlice = createSlice({
-//   name: 'cart',
-//   initialState,
-//   reducers: {
-//     addToCart(state, action) {
-//       const { productId, image, model, price, quantity } = action.payload;
-//       const existingItem = state.items.find(item => item.productId === productId);
-//       if (existingItem) {
-//         existingItem.quantity += quantity;
-//       } else {
-//         state.items.push({ productId, image, model, price, quantity });
-//       }
-//     }
-//   }
-// });
-
-// export const { addToCart } = cartSlice.actions;
-// export default cartSlice.reducer;
-
-
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -37,14 +11,14 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      const { productId, image, type, model, price, quantity } = action.payload;
+      const { productId, image, name, unique_id, price, quantity } = action.payload;
       const existingItem = state.items.find(item => item.productId === productId);
       if (existingItem) {
         existingItem.quantity += quantity;
       } else {
-        state.items.push({ productId, image, type, model, price, quantity });
+        state.items.push({ productId, image, name, unique_id, price, quantity });
       }
-      localStorage.setItem("carts" , JSON.stringify(state.items))
+      localStorage.setItem("carts", JSON.stringify(state.items));
       state.subtotal = state.items.reduce((total, item) => total + item.price * item.quantity, 0);
       state.total = state.subtotal; // Update total
     },
@@ -53,6 +27,7 @@ const cartSlice = createSlice({
       state.items = state.items.filter(item => item.productId !== productId);
       state.subtotal = state.items.reduce((total, item) => total + item.price * item.quantity, 0);
       state.total = state.subtotal; // Update total
+      localStorage.setItem("carts", JSON.stringify(state.items));
     },
     updateQuantity(state, action) {
       const { productId, quantity } = action.payload;
@@ -62,13 +37,19 @@ const cartSlice = createSlice({
         if (item.quantity <= 0) {
           state.items = state.items.filter(item => item.productId !== productId);
         }
-        localStorage.setItem("carts" , JSON.stringify(state.items))
+        localStorage.setItem("carts", JSON.stringify(state.items));
       }
       state.subtotal = state.items.reduce((total, item) => total + item.price * item.quantity, 0);
       state.total = state.subtotal; // Update total
-    }
+    },
+    clearCart: (state) => {
+      state.items = [];
+      state.subtotal = 0;
+      state.total = 0;
+      localStorage.setItem("carts", JSON.stringify(state.items));
+    },
   }
 });
 
-export const { addToCart, removeFromCart, updateQuantity } = cartSlice.actions;
+export const { addToCart, removeFromCart, updateQuantity, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -118,7 +118,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className="relative w-full mx-auto bg-[#f4f4f479] flex justify-between items-center md:px-[5rem] px-[2rem] py-[2rem] gap-10  overflow-hidden cursor-pointer border-b border-[#f2f2f279]">
+    <div id="products" className="relative w-full mx-auto bg-[#f4f4f479] flex justify-between items-center md:px-[5rem] px-[2rem] py-[2rem] gap-10  overflow-hidden cursor-pointer border-b border-[#f2f2f279]">
       <div className="flex gap-10 items-center text-[16px]">
         <Link to={"/"}>
           <img src={logo} alt="logo" />

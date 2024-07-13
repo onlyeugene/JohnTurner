@@ -70,6 +70,11 @@ body.modal-open {
   overflow: hidden;
 }
 
+
+html{
+  scroll-behavior: smooth;
+}
+
 /* .bg{
   background-image: url(./assets/empty.png);
   background-repeat: no-repeat;
