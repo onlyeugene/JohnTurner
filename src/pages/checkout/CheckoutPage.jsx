@@ -51,7 +51,7 @@ const CheckoutPage = () => {
   };
 
   return (
-    <div className='w-full md:px-[5rem] py-0 px-0 md:py-[2rem] bg-[#f4f4f479]'>
+    <div className='w-full md:px-[5rem] py-0 px-0 md:py-[2rem] bg-[#f4f4f479] overflow-hidden'>
       <Link to={'/'}>
         <img src={logo} alt="logo" className='md:px-0 md:py-0 px-[2rem] py-[1rem]'/>
       </Link>
@@ -62,7 +62,7 @@ const CheckoutPage = () => {
             
             {cartItems.map((item) => (
               <div key={item.productId} className='py-[2rem] flex gap-[2rem] border-b border-[#94A3B8]'>
-                <img src={item.image} alt={item.name} className='border border-[#AC702F] rounded-md bg-transparent' />
+                <img src={item.image} alt={item.name} className='border border-[#AC702F] rounded-md bg-transparent md:w-[30rem] w-[9rem] md:h-auto h-[9rem]' />
                 <div className='flex flex-col gap-5'>
                   <h1 className='md:text-2xl text-sm font-semibold'>{item.name}</h1>
                   <h2 className='md:text-2xl text-sm font-semibold'>N{item.price * item.quantity}</h2>

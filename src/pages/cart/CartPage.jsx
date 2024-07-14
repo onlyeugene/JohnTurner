@@ -77,7 +77,7 @@ const CartPage = () => {
 
           {cartItems.map((item) => (
             <div key={item.productId} className='py-[2rem] flex gap-[2rem] border-b border-[#94A3B8]'>
-              <img src={item.image} alt={item.model} className='border border-[#AC702F] rounded-md bg-transparent w-full'/>
+              <img src={item.image} alt={item.model} className='border border-[#AC702F] rounded-md bg-transparent md:w-[30rem] w-[9rem] md:h-auto h-[9rem]'/>
               <div className='flex flex-col gap-5 '>
                 <h1 className='md:text-2xl text-sm font-semibold'>{item.name} {item.unique_id}</h1>
                 <h2 className='md:text-2xl text-sm font-semibold'>N{item.price * item.quantity}</h2>

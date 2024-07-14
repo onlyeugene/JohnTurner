@@ -1,52 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import axiosInstance from '../../utils/axiosInstance';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../stores/cart';
-import rating from '../../assets/rating.svg';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import rating from '../../assets/rating.svg'
+import axios from "axios";
 
-const ProductDetail = () => {
+const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const dispatch = useDispatch();
-
   useEffect(() => {
-    const fetchProductDetail = async () => {
+    const fetchProduct = async () => {
       try {
-        const response = await axiosInstance.get(`/products/${id}`, {
-          params: {
-            organization_id: '8c5037428be7462db55476b9676f7488',
-            Appid: 'OD1N0RO9VMTHTY7',
-            Apikey: 'dc3ffc0905d44c69beea684bb189e2b920240712121331611680',
-          },
-        });
-        if (response.data && response.data.items && response.data.items.length > 0) {
-          setProduct(response.data.items[0]);
-        } else {
-          setError('Product not found');
-        }
+        const response = await axios.get(
+          `https://timbu-get-single-product.reavdev.workers.dev/${id}`,
+          {
+            params: {
+              organization_id: "8c5037428be7462db55476b9676f7488",
+              Appid: "OD1N0RO9VMTHTY7",
+              Apikey: "dc3ffc0905d44c69beea684bb189e2b920240712121331611680",
+            },
+          }
+        );
+        setProduct(response.data); // Use response.data directly
       } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
+        console.error("Error fetching product:", error);
       }
     };
 
-    fetchProductDetail();
+    fetchProduct();
   }, [id]);
 
-  useEffect(() => {
-    document.title = product ? product.name : 'Product Detail';
-  }, [product]);
-
-  if (loading) return <p className='text-center'>Loading...</p>;
-  if (error) return <p className='text-center'>Error: {error.message}</p>;
-  if (!product) return null;
-
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+  
   const imageUrl = `https://api.timbu.cloud/images/${product.photos[0]?.url}` || 'https://via.placeholder.com/150';
-  const productPrice = product.current_price[0]?.NGN[0] || 'Price not available';
 
   return (
     <div className="product-detail-container md:px-[5rem] py-[4rem] px-[2rem] md:flex grid justify-center items-center">
@@ -55,7 +41,7 @@ const ProductDetail = () => {
         <h1 className="text-2xl font-bold">{product.name}</h1>
         <h2 className="text-xl text-gray-700">{product.unique_id}</h2>
         <p className="mt-4">{product.description || 'No description available'}</p>
-        <h4 className="text-2xl font-semibold">N{productPrice}</h4>
+        <h4 className="text-2xl font-semibold">N{product.current_price[0]?.NGN[0] || 'Price not available'}</h4>
         <div className="flex items-center">
           <img src={rating} alt="Rating" />
           <span>{product.number}</span>
@@ -80,4 +66,11 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+{
+  /*     
+const extractPrice = (current_price) => {
+  return current_price ? current_price : "Price not available";
+}; */
+}
+
+export default Product;
